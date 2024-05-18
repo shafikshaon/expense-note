@@ -121,3 +121,9 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Define the custom user model used for authentication
 AUTH_USER_MODEL = "accounts.SystemUser"
+
+# Define the authentication backends for the Django project
+AUTHENTICATION_BACKENDS = (
+    "accounts.backends.email_or_username_backend.EmailOrUsernameModelBackend",
+    "django.contrib.auth.backends.ModelBackend",
+)
