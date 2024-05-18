@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "core.apps.CoreConfig",
-    "accounts.apps.AccountsConfig"
+    "accounts.apps.AccountsConfig",
 ]
 
 MIDDLEWARE = [
@@ -54,8 +54,7 @@ ROOT_URLCONF = "expense_note.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [BASE_DIR / 'templates']
-        ,
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
