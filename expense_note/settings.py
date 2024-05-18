@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 DEBUG = config("DEBUG", default=False, cast=bool)
 
 if DEBUG:
-    pass
+    from .development import *
 else:
     from .production import *
 
