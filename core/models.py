@@ -23,7 +23,7 @@ class Timestamp(Base):
 
 class Key(Base):
     id = models.BigAutoField(primary_key=True)
-    code = models.CharField(max_length=20, null=False, blank=False)
+    code = models.CharField(max_length=20, null=False, blank=True)
 
     class Meta:
         abstract = True
