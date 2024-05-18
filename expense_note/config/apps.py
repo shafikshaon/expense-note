@@ -12,6 +12,7 @@ DJANGO_DEFAULT_APPS = [
 CUSTOM_APPS = [
     "core.apps.CoreConfig",
     "accounts.apps.AccountsConfig",
+    "wallets.apps.WalletsConfig",
 ]
 
 INSTALLED_APPS = DJANGO_DEFAULT_APPS + CUSTOM_APPS
