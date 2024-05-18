@@ -8,7 +8,6 @@ from core.models import Key, Timestamp, Audit
 
 class SystemUser(AbstractUser, Key, Timestamp, Audit):
     email = models.EmailField(unique=True, blank=False, null=False)
-    role = models.CharField(max_length=50, blank=True, null=False)
 
     class Meta:
         app_label = "accounts"

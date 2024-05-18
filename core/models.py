@@ -36,18 +36,21 @@ class Audit(Base):
         on_delete=models.SET(get_sentinel_user),
         related_name="%(app_label)s_%(class)s_added_by",
         null=True,
+        blank=True,
     )
     changed_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET(get_sentinel_user),
         related_name="%(app_label)s_%(class)s_changed_by",
         null=True,
+        blank=True,
     )
     deleted_by = models.ForeignKey(
         settings.AUTH_USER_MODEL,
         on_delete=models.SET(get_sentinel_user),
         related_name="%(app_label)s_%(class)s_deleted_by",
         null=True,
+        blank=True,
     )
 
     class Meta:
