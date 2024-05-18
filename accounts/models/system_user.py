@@ -17,4 +17,11 @@ class SystemUser(AbstractUser, Key, Timestamp, Audit):
         verbose_name_plural = "users"
 
     def __str__(self):
-        return self.username
+        return f"{self.code} - {self.username} - {self.get_full_name()}"
+
+    def save(self, *args, **kwargs):
+        if not self.code:
+            super().save(*args, **kwargs)
+            self.code = f'SU-{self.pk:06d}'
+            kwargs['force_insert'] = False
+        super().save(*args, **kwargs)
