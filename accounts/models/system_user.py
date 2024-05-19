@@ -22,6 +22,6 @@ class SystemUser(AbstractUser, Key, Timestamp, Audit):
     def save(self, *args, **kwargs):
         if not self.code:
             super().save(*args, **kwargs)
-            self.code = f'SU-{self.pk:06d}'
-            kwargs['force_insert'] = False
+            self.code = f"SU-{self.pk:06d}"
+            kwargs["force_insert"] = False
         super().save(*args, **kwargs)
