@@ -14,7 +14,7 @@ class Transaction(Key, Timestamp, Audit):
     category = models.ForeignKey(
         TransactionCategory, on_delete=models.CASCADE, blank=False, null=False
     )
-    wallet_type = models.ForeignKey(
+    wallet = models.ForeignKey(
         Wallet, on_delete=models.CASCADE, blank=False, null=False
     )
     date = models.DateField(auto_now_add=True, blank=False, null=False)
@@ -29,4 +29,4 @@ class Transaction(Key, Timestamp, Audit):
         verbose_name_plural = "Transactions"
 
     def __str__(self):
-        return f"{self.wallet_type.name} - {self.category.name} - {self.amount}"
+        return f"{self.wallet.name} - {self.category.name} - {self.amount}"

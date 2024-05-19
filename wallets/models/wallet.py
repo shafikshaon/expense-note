@@ -3,6 +3,7 @@ __author__ = "Shafikur Rahman"
 from django.db import models
 
 from core.models import Key, Timestamp, Audit
+from wallets.models.transaction_category import TransactionCategory
 
 WALLET_TYPES = (
     ("Basic Wallet", "Basic"),
@@ -22,6 +23,9 @@ class Wallet(Key, Timestamp, Audit):
     exclude_from_total_balance = models.BooleanField(default=False)
     wallet_type = models.CharField(
         max_length=20, choices=WALLET_TYPES, blank=False, null=False
+    )
+    category = models.ManyToManyField(
+        TransactionCategory, related_name="wallets_categories"
     )
 
     class Meta:
