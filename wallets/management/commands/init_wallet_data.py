@@ -204,6 +204,7 @@ class Command(BaseCommand):
                 category=random_category,
                 wallet=wallet,
                 added_by=user,
+                date='2024-05-19'
             )
 
         print("Wallet data generated successfully.")
